@@ -1,0 +1,25 @@
+Note: SAPCs 7 and 8 have LS138's connected off their LPT1 ports.
+
+Script started on Thu Nov  8 15:36:11 2001
+warning: could not update utmp entry
+[3g
+
+u13(1)% 
+u13(1)% mtip -b 7 -f testLS138.lnx
+For command help, type ~?
+For help on args, rerun without args
+Code starts at 0x100100
+Using board # 7 
+
+Tutor> ~downloading testLS138.lnx
+.....Done.
+
+Download done, setting EIP to 100100.
+Tutor> go 100100
+The LS138 has been tested and is working correctly.
+Exception 3 at EIP=00100110: Breakpoint
+Tutor> ~q 
+Quit handler: 
+killing process 24188 Leaving board #7
+u13(2)% exit
+script done on Thu Nov  8 15:36:52 2001

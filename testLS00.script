@@ -1,0 +1,23 @@
+Note: SAPCs 5 and 6 have LS00's connected off their LPT1 ports.
+
+Script started on Thu Nov  8 15:35:27 2001
+warning: could not update utmp entry
+u13(1)% 
+u13(1)% mtip -b 5 -f testLS00.lnx
+For command help, type ~?
+For help on args, rerun without args
+Code starts at 0x100100
+Using board # 5 
+
+Tutor> ~downloading testLS00.lnx
+....Done.
+
+Download done, setting EIP to 100100.
+Tutor> go 100100
+The LS00 has been tested and is working correctly.
+Exception 3 at EIP=00100110: Breakpoint
+Tutor> ~q 
+Quit handler: 
+killing process 24176 Leaving board #5
+
+

@@ -1,0 +1,56 @@
+Note: SAPCs 1 and 2 have the scope setup:
+  COM1's TX connected through a line receiver to LPT1's LP_BUSY pin.
+  The line receiver turns the RS232 signal into a TTL-compatible signal.
+  Because of this use of COM1, there is no remote gdb available
+  on these systems.
+
+Script started on Thu Nov  8 15:02:57 2001
+warning: could not update utmp entry
+[3g
+u13(1)% mtip -b 2 -f test-scope.lnx
+For command help, type ~?
+For help on args, rerun without args
+Code starts at 0x100100
+Using board # 2 
+
+Tutor> ~resetting board #2retval = 1
+retval = 1
+!
+Please type <CR> to confirm console setting: 
+Setting console dev to COM2Console: colour EGA+ 80x25
+COM1 at 0x03f8 (irq = 4) is a 16550A
+COM2 at 0x02f8 (irq = 3) is a 16550A
+
+                 Welcome to UMB Tutor for the PC
+   UMB Tutor is a 32-bit protected-mode PC debugger/downloader,
+       based on Linux, UMB Tutor for m68k, and remote gdb.
+UMB Tutor is free software and you are welcome to distribute copies
+of it under certain conditions.  There is no warranty for this program.
+The copyright and warranty provisions follow the Gnu general public
+license, available for view in gdb and elsewhere.  Full sources available.
+--bugs, suggestions, questions to eoneil@cs.umb.edu
+
+Exception 3 at EIP=000578f3: Breakpoint
+Tutor> ~downloading test-scope.lnx
+.....Done.
+
+Download done, setting EIP to 100100.
+Tutor> go 100100
+
+To test scope on SAPC 1 or 2, please enter a character:  A
+The character 'A' (hex 0x41) will be sent at 1200 baud and at 9600 baud.
+
+At 1200 baud   823L  574H  575L 2873H  575L  574H 
+The received character was 0100 0001  =  'A'
+
+At 9600 baud   106L   72H   73L  362H   73L   72H 
+The received character was 0100 0001  =  'A'
+
+Scope has been tested and is working correctly.
+
+Exception 3 at EIP=00100110: Breakpoint
+Tutor> ~q 
+Quit handler: 
+killing process 23440 Leaving board #2
+u13(2)% exit
+script done on Thu Nov  8 15:04:06 2001

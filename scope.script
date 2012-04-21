@@ -1,0 +1,57 @@
+Script started on Mon Apr  3 16:38:43 2000
+ulab(3)% 
+ulab(3)% scope.sh 2 a 9600
+systems 1 and 2 each have a scope setup:
+COM1 TXD is connected to LPT1 BUSY, via a line receiver chip
+For command help, type ~?
+For help on args, rerun without args
+Code starts at 0x100100
+Using board # 2 
+~resetting board #2!
+Please type <CR> to confirm console setting: 
+Setting console dev to COM2Console: colour EGA+ 80x25
+COM1 at 0x03f8 (irq = 4) is a 16550A
+COM2 at 0x02f8 (irq = 3) is a 16550A
+
+                 Welcome to UMB Tutor for the PC
+   UMB Tutor is a 32-bit protected-mode PC debugger/downloader,
+       based on Linux, UMB Tutor for m68k, and remote gdb.
+UMB Tutor is free software and you are welcome to distribute copies
+of it under certain conditions.  There is no warranty for this program.
+The copyright and warranty provisions follow the Gnu general public
+license, available for view in gdb and elsewhere.  Full sources available.
+--bugs, suggestions, questions to eoneil@cs.umb.edu
+
+Exception 3 at EIP=000578f3: Breakpoint
+Tutor> ~downloading scope.lnx
+Calling loadprog()
+........Done.
+
+Download done, setting EIP to 100100.
+Tutor> GO 100100
+
+***************  DIGITAL OSCILLOSCOPE ************************
+
+This program acts as a digital oscilloscope.  It allows you to
+
+see a serial byte in flight.
+
+**************************************************************
+
+
+
+Please type a character:     a
+
+The character is a:     a
+The character has a hexadecimal value of:     61
+
+Please specify a baudrate:     9600
+
+Character a will be sent to COM1 at baudrate 9600
+__74__||71||__71__||283||__142__||71||__19288__
+
+Exception 3 at EIP=00100110: Breakpoint
+Tutor> ~q 
+Quit handler: Leaving board #2
+
+script done on Mon Apr  3 16:42:26 2000
